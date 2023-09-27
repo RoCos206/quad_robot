@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <link name="LF_leg_link">
+    <visual>
+      <origin xyz="0.05 0 0" rpy="0 1.57 0"/>
+      <geometry>
+        <cylinder radius="${leg_radius}" length="${leg_length}"/>
+      </geometry>
+      <xacro:insert_block name="green_material"/>
+    </visual>
+    <collision>
+      <origin xyz="0.05 0 0" rpy="0 1.57 0"/>
+      <geometry>
+        <cylinder radius="${leg_radius}" length="${leg_length}"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="0.1"/>
+      <inertia ixx="100" ixy="0" ixz="0" iyx="0" iyy="100" iyz="0" izz="100"/>
+    </inertial>
+  </link>
+  <link name="RF_leg_link">
+    <visual>
+      <origin xyz="0.05 0 0" rpy="0 1.57 0"/>
+      <geometry>
+        <cylinder radius="${leg_radius}" length="${leg_length}"/>
+      </geometry>
+      <xacro:insert_block name="green_material"/>
+    </visual>
+    <collision>
+      <origin xyz="0.05 0 0" rpy="0 1.57 0"/>
+      <geometry>
+        <cylinder radius="${leg_radius}" length="${leg_length}"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="0.1"/>
+      <inertia ixx="100" ixy="0" ixz="0" iyx="0" iyy="100" iyz="0" izz="100"/>
+    </inertial>
+  </link>
+  <link name="LR_leg_link">
+    <visual>
+      <origin xyz="0.05 0 0" rpy="0 1.57 0"/>
+      <geometry>
+        <cylinder radius="${leg_radius}" length="${leg_length}"/>
+      </geometry>
+      <xacro:insert_block name="green_material"/>
+    </visual>
+    <collision>
+      <origin xyz="0.05 0 0" rpy="0 1.57 0"/>
+      <geometry>
+        <cylinder radius="${leg_radius}" length="${leg_length}"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="0.1"/>
+      <inertia ixx="100" ixy="0" ixz="0" iyx="0" iyy="100" iyz="0" izz="100"/>
+    </inertial>
+  </link>
+  <link name="RR_leg_link">
+    <visual>
+      <origin xyz="0.05 0 0" rpy="0 1.57 0"/>
+      <geometry>
+        <cylinder radius="${leg_radius}" length="${leg_length}"/>
+      </geometry>
+      <xacro:insert_block name="green_material"/>
+    </visual>
+    <collision>
+      <origin xyz="0.05 0 0" rpy="0 1.57 0"/>
+      <geometry>
+        <cylinder radius="${leg_radius}" length="${leg_length}"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="0.1"/>
+      <inertia ixx="100" ixy="0" ixz="0" iyx="0" iyy="100" iyz="0" izz="100"/>
+    </inertial>
+  </link>
+  
+</robot>

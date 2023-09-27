@@ -1,0 +1,101 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <link name="LF_foot_link">
+    <visual>
+      <origin xyz="0.05 0 0" rpy="0 1.57 0"/>
+      <geometry>
+        <cylinder radius="${leg_radius}" length="${leg_length}"/>
+      </geometry>
+      <xacro:insert_block name="green_material"/>
+    </visual>
+    <collision>
+      <origin xyz="0.05 0 0" rpy="0 1.57 0"/>
+      <geometry>
+        <cylinder radius="${leg_radius}" length="${leg_length}"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="0.1"/>
+      <inertia ixx="100" ixy="0" ixz="0" iyx="0" iyy="100" iyz="0" izz="100"/>
+    </inertial>
+  </link>
+  <gazebo reference="LF_foot_link">
+    <material>Gazebo/Green</material>
+    <mu1 value="0.001"/>
+    <mu2 value="0.001"/>
+  </gazebo>
+  <link name="RF_foot_link">
+    <visual>
+      <origin xyz="0.05 0 0" rpy="0 1.57 0"/>
+      <geometry>
+        <cylinder radius="${leg_radius}" length="${leg_length}"/>
+      </geometry>
+      <xacro:insert_block name="green_material"/>
+    </visual>
+    <collision>
+      <origin xyz="0.05 0 0" rpy="0 1.57 0"/>
+      <geometry>
+        <cylinder radius="${leg_radius}" length="${leg_length}"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="0.1"/>
+      <inertia ixx="100" ixy="0" ixz="0" iyx="0" iyy="100" iyz="0" izz="100"/>
+    </inertial>
+  </link>
+  <gazebo reference="RF_foot_link">
+    <material>Gazebo/Green</material>
+    <mu1 value="0.001"/>
+    <mu2 value="0.001"/>
+  </gazebo>
+  <link name="LR_foot_link">
+    <visual>
+      <origin xyz="0.05 0 0" rpy="0 1.57 0"/>
+      <geometry>
+        <cylinder radius="${leg_radius}" length="${leg_length}"/>
+      </geometry>
+      <xacro:insert_block name="green_material"/>
+    </visual>
+    <collision>
+      <origin xyz="0.05 0 0" rpy="0 1.57 0"/>
+      <geometry>
+        <cylinder radius="${leg_radius}" length="${leg_length}"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="0.1"/>
+      <inertia ixx="100" ixy="0" ixz="0" iyx="0" iyy="100" iyz="0" izz="100"/>
+    </inertial>
+  </link>
+  <gazebo reference="LR_foot_link">
+    <material>Gazebo/Green</material>
+    <mu1 value="0.001"/>
+    <mu2 value="0.001"/>
+  </gazebo>
+  <link name="RR_foot_link">
+    <visual>
+      <origin xyz="0.05 0 0" rpy="0 1.57 0"/>
+      <geometry>
+        <cylinder radius="${leg_radius}" length="${leg_length}"/>
+      </geometry>
+      <xacro:insert_block name="green_material"/>
+    </visual>
+    <collision>
+      <origin xyz="0.05 0 0" rpy="0 1.57 0"/>
+      <geometry>
+        <cylinder radius="${leg_radius}" length="${leg_length}"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="0.1"/>
+      <inertia ixx="100" ixy="0" ixz="0" iyx="0" iyy="100" iyz="0" izz="100"/>
+    </inertial>
+  </link>
+  <gazebo reference="RR_foot_link">
+    <material>Gazebo/Green</material>
+    <mu1 value="0.001"/>
+    <mu2 value="0.001"/>
+  </gazebo>
+  
+</robot>

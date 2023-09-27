@@ -1,0 +1,64 @@
+<?xml version="1.0" ?>
+<robot name="quad_robot" xmlns:xacro="http://ros.org/wiki/xacro">
+
+  <!-- Define materials -->
+  <xacro:include filename="$(find quad_robot)/description/colors.xacro"/>
+
+  <!-- Define properties -->
+  <xacro:include filename="$(find quad_robot)/description/value.xacro"/>
+
+  <!-- Body link -->
+  <link name="body_link">
+    <visual>
+      <origin xyz="0 0 0.3" rpy="0 0 0"/>
+      <geometry>
+        <box size="${body_length} ${body_width} ${body_height}"/>
+      </geometry>
+      <xacro:insert_block name="black_material"/>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="${body_length} ${body_width} ${body_height}"/>
+      </geometry>
+      <origin xyz="0 0 0.3" rpy="0 0 0"/>
+    </collision>
+    <inertial>
+      <mass value="2"/>
+      <inertia ixx="100" ixy="0" ixz="0" iyy="100" iyz="0" izz="100"/>
+    </inertial>
+  </link>
+  
+  <!-- Shoulder links -->
+  <xacro:include filename="$(find quad_robot)/description/shoulder_link.xacro"/>
+  
+  <!-- Shoulder joints -->
+  <xacro:include filename="$(find quad_robot)/description/shoulder_joint.xacro"/>
+  
+  <!-- Leg links -->
+  <xacro:include filename="$(find quad_robot)/description/leg_link.xacro"/>
+  
+  <!-- Leg joints -->
+  <xacro:include filename="$(find quad_robot)/description/leg_joint.xacro"/>
+  
+  <!-- Foot links -->
+  <xacro:include filename="$(find quad_robot)/description/foot_link.xacro"/>
+  
+  <!-- Foot joints -->
+  <xacro:include filename="$(find quad_robot)/description/foot_joint.xacro"/>
+  
+  <xacro:LF_shoulder_joint name="LF_shoulder_joint" parent="body_link" child="LF_shoulder_link"/>
+  <xacro:RF_shoulder_joint name="RF_shoulder_joint" parent="body_link" child="RF_shoulder_link"/>
+  <xacro:LR_shoulder_joint name="LR_shoulder_joint" parent="body_link" child="LR_shoulder_link"/>
+  <xacro:RR_shoulder_joint name="RR_shoulder_joint" parent="body_link" child="RR_shoulder_link"/>
+
+  <xacro:LF_leg_joint name="LF_leg_joint" parent="LF_shoulder_link" child="LF_leg_link"/>
+  <xacro:RF_leg_joint name="RF_leg_joint" parent="RF_shoulder_link" child="RF_leg_link"/>
+  <xacro:LR_leg_joint name="LR_leg_joint" parent="LR_shoulder_link" child="LR_leg_link"/>
+  <xacro:RR_leg_joint name="RR_leg_joint" parent="RR_shoulder_link" child="RR_leg_link"/>
+  
+  <xacro:LF_foot_joint name="LF_foot_joint" parent="LF_leg_link" child="LF_foot_link"/>
+  <xacro:RF_foot_joint name="RF_foot_joint" parent="RF_leg_link" child="RF_foot_link"/>
+  <xacro:LR_foot_joint name="LR_foot_joint" parent="LR_leg_link" child="LR_foot_link"/>
+  <xacro:RR_foot_joint name="RR_foot_joint" parent="RR_leg_link" child="RR_foot_link"/>
+
+</robot>

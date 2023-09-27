@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro"> 
+ 
+  <xacro:property name="leg_foot_origin1" value="0.17 0 0"/>
+  <xacro:property name="leg_foot_origin2" value="0.17 0 0"/>
+  <xacro:property name="leg_foot_origin3" value="0.17 0 0"/>
+  <xacro:property name="leg_foot_origin4" value="0.17 0 0"/>
+  <xacro:property name="leg_foot_axis" value="0 0 1"/>
+  
+  <xacro:macro name="LF_foot_joint" params="name parent child">
+    <joint name="${name}" type="revolute">
+      <origin xyz="${leg_foot_origin1}" rpy="0 0 0"/>
+      <parent link="${parent}"/>
+      <child link="${child}"/>
+      <axis xyz="${leg_foot_axis}"/>
+      <limit lower="-1.5708" upper="1.5708" effort="30" velocity="1"/>
+    </joint>
+  </xacro:macro>
+  
+  <xacro:macro name="RF_foot_joint" params="name parent child">
+    <joint name="${name}" type="revolute">
+      <origin xyz="${leg_foot_origin2}" rpy="0 0 0"/>
+      <parent link="${parent}"/>
+      <child link="${child}"/>
+      <axis xyz="${leg_foot_axis}"/>
+      <limit lower="-1.5708" upper="1.5708" effort="30" velocity="1"/>
+    </joint>
+  </xacro:macro>
+  
+  <xacro:macro name="LR_foot_joint" params="name parent child">
+    <joint name="${name}" type="revolute">
+      <origin xyz="${leg_foot_origin3}" rpy="0 0 0"/>
+      <parent link="${parent}"/>
+      <child link="${child}"/>
+      <axis xyz="${leg_foot_axis}"/>
+      <limit lower="-1.5708" upper="1.5708" effort="30" velocity="1"/>
+    </joint>
+  </xacro:macro>
+  
+  <xacro:macro name="RR_foot_joint" params="name parent child">
+    <joint name="${name}" type="revolute">
+      <origin xyz="${leg_foot_origin4}" rpy="0 0 0"/>
+      <parent link="${parent}"/>
+      <child link="${child}"/>
+      <axis xyz="${leg_foot_axis}"/>
+      <limit lower="-1.5708" upper="1.5708" effort="30" velocity="1"/>
+    </joint>
+  </xacro:macro>
+  
+</robot>

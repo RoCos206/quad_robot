@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:property name="shoulder_joint_origin1" value="${body_length/2-0.02} ${body_width/2+0.03} 0.3"/>
+  <xacro:property name="shoulder_joint_origin2" value="${body_length/2-0.02} -${body_width/2+0.03} 0.3"/>
+  <xacro:property name="shoulder_joint_origin3" value="-${body_length/2-0.02} ${body_width/2+0.03} 0.3"/>
+  <xacro:property name="shoulder_joint_origin4" value="-${body_length/2-0.02} -${body_width/2+0.03} 0.3"/>
+  <xacro:property name="shoulder_joint_axis" value="0 0 1"/>
+
+  <xacro:macro name="LF_shoulder_joint" params="name parent child">
+    <joint name="${name}" type="revolute">
+      <origin xyz="${shoulder_joint_origin1}" rpy="0 1.57 0"/>
+      <parent link="${parent}"/>
+      <child link="${child}"/>
+      <axis xyz="${shoulder_joint_axis}"/>
+      <limit lower="-1.5708" upper="1.5708" effort="30" velocity="1"/>
+    </joint>
+  </xacro:macro>
+  
+  <xacro:macro name="RF_shoulder_joint" params="name parent child">
+    <joint name="${name}" type="revolute">
+      <origin xyz="${shoulder_joint_origin2}" rpy="0 1.57 0"/>
+      <parent link="${parent}"/>
+      <child link="${child}"/>
+      <axis xyz="${shoulder_joint_axis}"/>
+      <limit lower="-1.5708" upper="1.5708" effort="30" velocity="1"/>
+    </joint>
+  </xacro:macro>
+  
+  <xacro:macro name="LR_shoulder_joint" params="name parent child">
+    <joint name="${name}" type="revolute">
+      <origin xyz="${shoulder_joint_origin3}" rpy="0 1.57 0"/>
+      <parent link="${parent}"/>
+      <child link="${child}"/>
+      <axis xyz="${shoulder_joint_axis}"/>
+      <limit lower="-1.5708" upper="1.5708" effort="30" velocity="1"/>
+    </joint>
+  </xacro:macro>
+  
+  <xacro:macro name="RR_shoulder_joint" params="name parent child">
+    <joint name="${name}" type="revolute">
+      <origin xyz="${shoulder_joint_origin4}" rpy="0 1.57 0"/>
+      <parent link="${parent}"/>
+      <child link="${child}"/>
+      <axis xyz="${shoulder_joint_axis}"/>
+      <limit lower="-1.5708" upper="1.5708" effort="30" velocity="1"/>
+    </joint>
+  </xacro:macro>
+  
+</robot>
